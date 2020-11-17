@@ -49,7 +49,7 @@ const Login = ( {navigation} ) => {
     return (
     
         <View style={styles.container}>
-            
+
             <Image
                 style={styles.logo}
                 source={{
