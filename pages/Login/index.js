@@ -34,13 +34,13 @@ const Login = ( {navigation} ) => {
         .then(data => {
             console.log(data);
             if(data.status != 404){
-                alert('Seja bem vindx');
+                alert('Seja bem vindo');
                 console.log(data.token);
                 
                 salvar(data.token);
                 navigation.navigate('Autenticado');
             }else{
-                alert('Email ou senha inválidos! :( ');
+                alert('Email ou senha inválido!');
             }
         })
 
@@ -49,12 +49,21 @@ const Login = ( {navigation} ) => {
     return (
     
         <View style={styles.container}>
-             <TextInput
-               style={styles.input}
+            
+            <Image
+                style={styles.logo}
+                source={{
+                    uri: 'https://raw.githubusercontent.com/sena-code/React-Node/main/4%20-%20Trabalhando%20com%20react-bootstrap%20e%20react-router-dom/nyous-react/src/assets/img/Logo.svg',
+                }}
+            /> 
+
+    <TextInput
+                style={styles.input}
                 onChangeText={text => setEmail(text)}
                 value={email}
                 placeholder="Digite seu email"
-   />
+            />
+
      <TextInput
                style={styles.input}
                 onChangeText={text => setSenha(text)}
@@ -76,7 +85,7 @@ const Login = ( {navigation} ) => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#ffff',
+      backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
     },
